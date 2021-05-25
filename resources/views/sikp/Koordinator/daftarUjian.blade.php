@@ -53,44 +53,6 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <h5><b></b></h5>
-                    <table class="table table-striped table-hover table-responsive">
-                        <thead class="table-success">
-                            <tr align="center">
-                                <th style="width: 10px">No</th>
-                                <th scope="col">Tanggal</th>
-                                <th scope="col">Jam</th>
-                                <th scope="col">Ruangan</th>
-                                <th scope="col">NIM</th>
-                                <th scope="col">Nama</th>
-                                <th scope="col">Judul</th>
-                                <th scope="col">Lembaga</th>
-                                <th scope="col">Dosen Pembimbing</th>
-                            </tr>
-                        </thead>
-                        @php
-                            $no = 1;    
-                        @endphp
-                        <tbody> 
-                            @foreach($nidn as $nidnPenguji)
-                                @foreach($dafPenguji as $daftarPenguji)
-                                    @if($nidnPenguji->nidn == $daftarPenguji->nidn)
-                                        <tr>
-                                            <td>{{$no++}}</td>
-                                            <td>{{$daftarPenguji->tglUjian}}</td>
-                                            <td>{{$daftarPenguji->jamUjian}}</td>
-                                            <td>{{$daftarPenguji->namaRuang}}</td>
-                                            <td>{{$daftarPenguji->nim}}</td>
-                                            <td>{{$daftarPenguji->namaMhs}}</td>
-                                            <td>{{$daftarPenguji->judul}}</td>
-                                            <td>{{$daftarPenguji->lembaga}}</td>
-                                            <td>{{$daftarPenguji->namaDosen}}</td>
-                                        </tr>
-                                    @endif
-                                @endforeach
-                            @endforeach
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>

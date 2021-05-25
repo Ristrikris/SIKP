@@ -5,15 +5,74 @@
             {{session('sukses')}}
         </div>
     @endif
-<div class="container">
-  <div class="row">
-    <div class="col-md-12 mt-5">
-      <div class="card-header bg-success text-white">
-    <h4>Data Pengajuan Surat Keterangan</h4>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 mt-5">
+          <div class="card-header bg-primary text-white">
+            <h4 align=center>Daftar Pengajuan Surat Keterangan</h4>
+          </div>
+      <div class="box-body no-padding">
+        <table class="table table-bordered border-primary">
+          <thead>
+            <tr>
+              <th style="width: 10px">NO</th>
+              <th>NIM</th>
+              <th>Semester</th>
+              <th>Nama Lembaga</th>
+              <th>Alamat Lembaga</th>
+              <th style="width: 100px">Status</th>
+            </tr>
+          </thead>
+          @php
+              $no = 1;    
+          @endphp
+          <tbody>
+            @foreach($nim_login as $nim_log)
+              @foreach($data as $data_surat)
+                @if($data_surat->aktif == '1')
+                  @if($nim_log->nim == $data_surat->nim)
+                    <tr>
+                      <td>{{ $no++ }}</td>
+                      <td>{{$data_surat->nim}}</td>
+                      <td>{{$data_surat->semester}}</td>
+                      <td>{{$data_surat->lembaga}}</td>
+                      <td>{{$data_surat->alamat}}</td>
+                      <td>
+                        @if($data_surat->statusSurat == '0')
+                          <b>Belum Diverifikasi</b>
+                        @endif
+  
+                        @if($data_surat->statusSurat == '1')
+                        <button type="button" class="btn btn-succes" disabled data-bs-toggle="button" autocomplete="off"><h5><bold>Diterima</bold></h5></button>
+                        @endif
+  
+                        @if($data_surat->statusSurat == '2')
+                          <span  style="color:red"> Ditolak </span> 
+                        @endif
+                      </td>
+                    </tr>
+                  @endif
+                @endif
+              @endforeach
+            @endforeach
+          </tbody>
+        </table>
       </div>
+    </div>
+    <div class="container">
+      <div class="row d-flex justify-content-center mt-200"> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Pengajuan Surat Keterangan</button> </div> <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Pengajuan Surat Keterangan</h5> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                    </div>
+                    <div class="modal-body">
+                      <div id="smartwizard">
     <form action="/mhs/insertSuratKet" method="POST" enctype="multipart/form-data">
       {{csrf_field()}}
-
+<br>
+<br>
       @foreach($nim_login as $nim_mhs)
         <div class="form-group">
           <label for="exampleInputEmail1">NIM :</label> 
@@ -55,73 +114,36 @@
 
       <div class="form-group">
         <label for="exampleInputEmail1">No. Telp :</label>
-        <input name="noTelp" type="text" class="form-control" id="noTelp" required="required">
+        <input name="noTelp" type="number" class="form-control" id="noTelp" required="required">
       </div>
 
       <div class="form-group">
         <label for="exampleInputEmail1">Fax :</label>
-        <input name="fax" type="text" class="form-control" id="fax" aria-describedby="emailHelp" required="required">
+        <input name="fax" type="number" class="form-control" id="fax" aria-describedby="emailHelp" required="required">
       </div>
 
       <div class="form-group">
         <label for="exampleFormControlFile1">Dokumen Pengajuan Surat Keterangan :</label>
         <input type="file" class="form-control-file" id="dokumenSurat" name="dokumenSurat" required="required">
-        <i style="color:#db1a1a">File <b>Harus</b> bertipe <b>.PDF</b></i>
+        <i style="color:#db1a1a">document bertipe PDF</b></i>
       </div>
 
-      <button type="submit" class="btn btn-primary btn-round" name="Submit">Submit</button>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            <b>Anda telah menyetujui data anda untuk disimpan dan dikelola</b>
+          </label>
+          </div>
+          <i style="color:#fa2525">wajib di centang</i>
+          <br>
+          <button type="submit" class="btn btn-primary" name="Submit">Submit</button>
+        </form>
+          </div>
+      </div>
+      </div>
     </form>
-  </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 mt-5">
-        <div class="card-header bg-success text-white">
-      <h4>Daftar Pengajuan Surat Keterangan</h4>
+            </div>
         </div>
-    <div class="box-body no-padding">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th style="width: 10px">NO</th>
-            <th>NIM</th>
-            <th>Lembaga</th>
-            <th style="width: 10px">Status</th>
-          </tr>
-        </thead>
-        @php
-            $no = 1;    
-        @endphp
-        <tbody>
-          @foreach($nim_login as $nim_log)
-            @foreach($data as $data_surat)
-              @if($data_surat->aktif == '1')
-                @if($nim_log->nim == $data_surat->nim)
-                  <tr>
-                    <td>{{ $no++ }}</td>
-                    <td>{{$data_surat->nim}}</td>
-                    <td>{{$data_surat->lembaga}}</td>
-                    <td>
-                      @if($data_surat->statusSurat == '0')
-                        <b>Belum Diverifikasi</b>
-                      @endif
-
-                      @if($data_surat->statusSurat == '1')
-                        <span class="glyphicon glyphicon-ok-sign" style="color:green"> Diterima 
-                      @endif
-
-                      @if($data_surat->statusSurat == '2')
-                        <span class="glyphicon glyphicon-remove-sign" style="color:red"> Ditolak 
-                      @endif
-                    </td>
-                  </tr>
-                @endif
-              @endif
-            @endforeach
-          @endforeach
-        </tbody>
-      </table>
-    </div>
   </div>
 </div>
 @endsection

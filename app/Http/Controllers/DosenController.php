@@ -85,7 +85,7 @@ class DosenController extends Controller
         $pengajuan = DB::table('kp')
             ->where('idKp', $idKp)
             ->update(['pengajuanUjian' => 1]);
-        return redirect('/sikp/bimbingan_kp');
+        return redirect('/menu/bimbingan_kp');
     }
     //
     

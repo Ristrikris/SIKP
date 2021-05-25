@@ -1,13 +1,10 @@
 @extends('sikp.layout.koorLayout')
 @section('konten')
     <section class="content-header">
-    <div class="col-md-12 mt-5">
-      <div class="card-header bg-success text-white">
-        <h4><b>Daftar Pengajuan Pra KP </b></h4>
+      <div class="card-header bg-primary text-white">
+        <h4><b><center>Daftar Pengajuan Pra KP </center></b></h4>
     </section>
     <br> 
-    <div class="row">
-        <div class="col-md-6">
             <form method="post" enctype="multipart/form-data" action="{{ URL::to('/') }}/sikp/setPraKp">
                 {{csrf_field()}}
                 <div class="box box-primary">
@@ -18,15 +15,15 @@
                         @foreach($nidn as $nidn)
                         {{$nidn->nidn}}
                         @endforeach<br><br>
-                        <table class="table table-striped table-hover table-responsive">
-                            <thead class="table-success">
+                        <table class="table table-bordered border-primary">
+                            <thead class="table-primary">
                                 <tr align="center">
-                                    <th scope="col">Status Verifikasi</th>
                                     <th scope="col">NIM</th>
                                     <th scope="col">Nama</th>
                                     <th scope="col">Judul</th>
                                     <th scope="col">Lembaga</th>
                                     <th scope="col">Dokumen Pra KP</th>
+                                    <th scope="col">Status Verifikasi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -59,14 +56,22 @@
             </form>
         </div>
         </div>
-        <div class="col-md-6">
+        <div class="container">
+            <div class="row d-flex justify-content-center mt-200"> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">List Verifikasi Status Pra KP </button> </div> <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Daftar Verifikasi Pengajuan Pra KP Mahasiswan</h5> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                          </div>
+                          <div class="modal-body">
+                            <div id="smartwizard">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h4><b>Daftar Verifikasi Pengajuan Pra KP Mahasiswa</b></h4><br>
-                        <table class="table table-striped table-hover table-responsive">
-                            <thead class="table-success">
+                    <h4><b><center>Daftar Verifikasi Pengajuan Pra KP Mahasiswa</center></b></h4><br>
+                        <table class="table table-bordered border-primar">
+                            <thead class="table-primary">
                                 <tr align="center">
-                                    <th style="width: 10px">No</th>
                                     <th scope="col">NIM</th>
                                     <th scope="col">Nama</th>
                                     <th scope="col">Judul</th>
@@ -81,7 +86,6 @@
                                 @foreach($dataStatus as $dataVer)
                                     @if($dataVer->statusPraKp == 1)
                                         <tr>
-                                            <td>{{$no++}}</td>
                                             <td>{{$dataVer->nim}}</td>
                                             <td>{{$dataVer->namaMhs}}</td>
                                             <td>{{$dataVer->judul}}</td>

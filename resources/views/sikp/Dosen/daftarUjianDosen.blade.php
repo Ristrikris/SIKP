@@ -14,8 +14,8 @@
                     @foreach($nidn as $nidnDosenLogin)
                     {{$nidnDosenLogin->nidn}}
                     @endforeach<br><br>
-                    <table class="table table-striped table-hover table-responsive">
-                        <thead class="thead-dark">
+                    <table class="table table-bordered border-primary">
+                        <thead class="table-primary">
                             <tr align="center">
                                 <th style="width: 10px">No</th>
                                 <th scope="col">Tanggal</th>
@@ -48,8 +48,8 @@
                         </tbody>
                     </table>
                     <h5><b></b></h5>
-                    <table class="table table-striped table-hover table-responsive">
-                        <thead class="thead-dark">
+                    <table class="table table-bordered border-primary">
+                        <thead class="table-primary">
                             <tr align="center">
                                 <th style="width: 10px">No</th>
                                 <th scope="col">Tanggal</th>

@@ -101,7 +101,7 @@ class MahasiswaController extends Controller
             'fax' => $request->fax,
             'dokumenKp' => $data->file
         ]);
-        return redirect('/sikp/pengajuanKp')->with(['sukses' => 'Pengajuan berhasil ditambahkan!']);
+        return redirect('/sikp/pengajuanKp')->with;
     }
 
     public function tambahPengajuanPraKp(Request $request)
@@ -225,7 +225,7 @@ class MahasiswaController extends Controller
             ->join('surat', 'surat.idReg', '=', 'registrasi.idReg')
             ->join('periode', 'periode.idPeriode', '=', 'registrasi.idPeriode')
             ->select(DB::raw('registrasi.idReg, registrasi.idPeriode,periode.aktif,
-                registrasi.nim, surat.lembaga, surat.statusSurat'))
+                registrasi.nim, registrasi.semester, surat.lembaga, surat.statusSurat, surat.alamat'))
             ->orderBy('registrasi.idReg')
             ->get();
         return view('sikp.Mahasiswa.suratKeteranganMhs', [
@@ -254,7 +254,7 @@ class MahasiswaController extends Controller
         $data = DB::table('registrasi')
             ->join('praKp', 'praKp.idReg', '=', 'registrasi.idReg')
             ->join('periode', 'periode.idPeriode', '=', 'registrasi.idPeriode')
-            ->select(DB::raw('registrasi.nim, praKp.judul, praKp.lembaga, praKp.statusPraKp,
+            ->select(DB::raw('registrasi.nim, praKp.judul, praKp.lembaga, praKp.alamat,praKp.noTelp,praKp.statusPraKp,
                 registrasi.idPeriode,periode.aktif,registrasi.idReg'))
             ->orderBy('registrasi.idReg')
             ->get();

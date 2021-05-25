@@ -14,8 +14,8 @@
                 @foreach($nidn as $nidn)
                 {{$nidn->nidn}}
                 @endforeach<br><br>
-                <table class="table table-striped table-hover table-responsive">
-                    <thead class="table-success">
+                <table class="table table-bordered border-primary">
+                    <thead class="table-primary">
                         <tr align="center">
                             <th scope="col">NIM</th>
                             <th scope="col">Nama</th>

@@ -7,7 +7,6 @@
     </section>
     <br> 
     <div class="row">
-        <div class="col-md-8">
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <h7><b>Nama Dosen : </b></h7>
@@ -54,7 +53,6 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <h4><b>Daftar Status Pengajuan Ujian Mahasiswa</b></h4><br>

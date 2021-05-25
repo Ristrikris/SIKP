@@ -425,9 +425,9 @@ class KoorController extends Controller
             'tahun' => $request->tahun,
             'mulaiKp' => $tanggalSekarang,
             'akhirKp' => $request->akhirKp,
-            'aktif' => $request->aktif
+            'aktif' => '1'
         ]); 
-        return redirect('/sikp/batas_kp')->with(['success' => 'Batas Pelaksanaan Kerja Praktik Berhasil Disimpan!']);
+        return redirect('/sikp/batas_kp')->with(['success' => 'Batas Pelaksanaan Kerja Praktik Berhasil Diaktifkan']);
         
     }
 

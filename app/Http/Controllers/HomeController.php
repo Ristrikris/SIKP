@@ -43,9 +43,9 @@ class HomeController extends Controller
             return view('sikp.Mahasiswa.registrasi');
         } else if ($contains = Str::contains($emailGoogle, 'si.ukdw.ac.id') && $email != "") {
             return view('home', ['nim' => $nim]);
-        } else if ($contains = Str::contains($emailGoogle, 'gmail.com') && $users== "0") {
+        } else if ($contains = Str::contains($emailGoogle, 'students.ukdw.ac.id') && $users== "0") {
             return view('homeDosen', ['nidn' => $nidn]);
-        } else if ($contains = Str::contains($emailGoogle, 'gmail.com')&& $users== "1" ) {
+        } else if ($contains = Str::contains($emailGoogle, 'students.ukdw.ac.id')&& $users== "1" ) {
             return view('homeKoordinator', ['nidn' => $nidn]);
         } 
     }

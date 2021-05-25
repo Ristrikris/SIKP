@@ -145,7 +145,6 @@
 
 
 	<!-- bagian konten blog -->
-	<div class="jumbotron jumbotron-fluid">
 		<div class="container-fluid">
 			@yield('konten')
 		</div>

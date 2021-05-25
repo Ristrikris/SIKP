@@ -3,8 +3,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 mt-5">
-          <div class="card-header bg-secondary text-black">
-        <h4>Jadwal Ujian KP</h4>
+          <div class="card-header bg-secondary text-white">
+        <h4><center>Jadwal Ujian KP</center></h4>
         @foreach($namaMhs as $nama_mhs)
           <h4>Nama : {{$nama_mhs->namaMhs}} </h4>
         @endforeach
@@ -12,7 +12,7 @@
           <h4>NIM : {{$nim_mhs->nim}} </h4> 
         @endforeach
         <br><br><br>
-        <table class="table table-success table-striped">
+        <table class="table table-bordered border-primary">
           <thead class="table table-success table-striped">
             <tr>
               <th scope="col">No</th>

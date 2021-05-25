@@ -5,7 +5,7 @@
     </section>
     <br> 
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md">
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <h7><b>Nama Dosen : </b></h7>
@@ -14,7 +14,7 @@
                     @foreach($nidn as $nidnDosenLogin)
                         {{$nidnDosenLogin->nidn}}
                     @endforeach<br><br>
-                    <table class="table table-striped table-hover table-responsive">
+                    <table class="table table-bordered border-primary">
                         <thead class="table-primary">
                             <tr align="center">
                                 <th scope="col">Pengajuan Ujian</th>
@@ -53,11 +53,12 @@
             </div>
         </div>
         </div>
-        <div class="col-md-4">
+        <div class = "row">
+        <div class="col-md">
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <h4><b>Daftar Pengajuan Ujian Mahasiswa</b></h4><br>
-                    <table class="table table-striped table-hover table-responsive">
+                    <table class="table table-bordered border-primary">
                         <thead class="table-primary">
                             <tr align="center">
                                 <th style="width: 10px">No</th>
