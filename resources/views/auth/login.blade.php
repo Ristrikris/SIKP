@@ -82,7 +82,7 @@
                 </div>
             </div>
             <div class="bg-blue py-4">
-                <div class="row px-4"> <strong class="ml-4 ml-sm-5 mb-2">Copyright &copy;rplrel 2021. referenced by eeef 2020.</strong>
+                <div class="row px-4"> <strong class="ml-4 ml-sm-5 mb-2">Copyright &copy; 2021. All rights reserved.</strong>
                 </div>
             </div>
         </div>

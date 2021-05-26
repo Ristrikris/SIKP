@@ -19,9 +19,63 @@
             });
         })</script>
         <style>
-            body {
-        overflow-x: hidden;
+            @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #c3cef3;
         }
+
+        p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1em;
+            font-weight: 300;
+            line-height: 1.7em;
+            color: #999;
+        }
+        a, a:hover, a:focus {
+        color: inherit;
+        text-decoration: none;
+        transition: all 0.3s;
+        }
+
+        #sidebar {
+            /* don't forget to add all the previously mentioned styles here too */
+            background: #7386D5;
+            color: rgb(47, 119, 228);
+            transition: all 0.3s;
+        }
+
+        #sidebar .sidebar-header {
+            padding: 20px;
+            background: #6d7fcc;
+        }
+
+        #sidebar ul.components {
+            padding: 20px 0;
+            border-bottom: 1px solid #47748b;
+        }
+
+        #sidebar ul p {
+            color: rgb(128, 179, 247);
+            padding: 10px;
+        }
+
+        #sidebar ul li a {
+            padding: 10px;
+            font-size: 1.1em;
+            display: block;
+        }
+        #sidebar ul li a:hover {
+            color: #7386D5;
+            background: rgb(119, 174, 255);
+        }
+
+        #sidebar ul li.active > a, a[aria-expanded="true"] {
+            color: rgb(137, 167, 250);
+            background: #6d7fcc;
+        }
+          
         #sidebar-wrapper {
         min-height: 100vh;
         margin-left: -15rem;
@@ -61,7 +115,14 @@
         <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-light border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading">SIKP </div>
+        <div class="sidebar-heading"><h3>SIKP</h3></div>
+        <div class="d-flex justify-content-center"></div>
+        @if(auth()->user()->photo)
+                <br><img src="{{ auth()->user()->photo }}" alt="photo" height="150" width="150" class="rounded-circle"><br><br>
+                @endif
+                <div class="d-flex justify-content-center">
+                <td><h4> {{ auth()->user()->name }}</h4> </td>
+                </div>
         <div class="list-group list-group-flush">
             <a class="list-group-item list-group-item-action bg-light"href="{{ URL::to('/') }}/home">HOME</a>
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -134,6 +195,8 @@
         </div>
         </div>
         <!-- /#page-content-wrapper -->
+        <div class="container-fluid">
+
         </div>
         <!-- /#wrapper -->
     </body>

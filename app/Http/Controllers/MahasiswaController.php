@@ -101,7 +101,7 @@ class MahasiswaController extends Controller
             'fax' => $request->fax,
             'dokumenKp' => $data->file
         ]);
-        return redirect('/sikp/pengajuanKp')->with;
+        return redirect('/sikp/pengajuanKp')->with('sukses', 'Pengajuan KP berhasil ditambahkan!');
     }
 
     public function tambahPengajuanPraKp(Request $request)

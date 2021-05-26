@@ -73,7 +73,6 @@
                       <div id="smartwizard">
     <form action="/mhs/insertPraKp" method="POST" enctype="multipart/form-data">
       {{csrf_field()}}
-
       @foreach($nim_login as $nim_mhs)
         <div class="form-group">
           <label for="exampleInputEmail1">NIM :</label>
@@ -81,7 +80,6 @@
             value="{{$nim_mhs->nim}}" readonly>
         </div>
       @endforeach
-
       @foreach($perAktif as $aktif)
       <div class="form-row">
         <div class="form-group col-sm">

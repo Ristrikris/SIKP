@@ -1,19 +1,20 @@
 @extends('sikp.layout.mahasiswaLayout')
 @section('konten')
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 mt-5">
-          <div class="card-header bg-secondary text-white">
-        <h4><center>Jadwal Ujian KP</center></h4>
+<h4><center>Jadwal Ujian KP</center></h4>
+<div class="container mt-5 mb-5 d-flex justify-content-center">
+  <div class="card rounded">
+      <div class=" d-block justify-content-center">
+          <div class="area1 "> </div>
+          <div class="area2 p-">
         @foreach($namaMhs as $nama_mhs)
-          <h4>Nama : {{$nama_mhs->namaMhs}} </h4>
+          <h4>{{$nama_mhs->namaMhs}} </h4>
         @endforeach
         @foreach($nim as $nim_mhs)
-          <h4>NIM : {{$nim_mhs->nim}} </h4> 
+          <h4>{{$nim_mhs->nim}} </h4> 
         @endforeach
         <br><br><br>
         <table class="table table-bordered border-primary">
-          <thead class="table table-success table-striped">
+          <thead class="table table-primary table-striped">
             <tr>
               <th scope="col">No</th>
               <th scope="col">Tanggal</th>

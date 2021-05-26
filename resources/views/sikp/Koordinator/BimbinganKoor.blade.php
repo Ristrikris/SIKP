@@ -1,9 +1,6 @@
 @extends('sikp.layout.koorLayout')
 @section('konten')
     <section class="content-header">
-    <div class="col-md-12 mt-5">
-            <div class="card-header bg-success text-white">
-        <h4><b>Daftar Bimbingan Kerja Praktik Mahasiswa</b></h4>
     </section>
     <br> 
     <div class="row">
@@ -15,8 +12,9 @@
                     @foreach($nidn as $nidnDosenLogin)
                     {{$nidnDosenLogin->nidn}}
                     @endforeach<br><br>  
-                    <table class="table table-striped table-hover table-responsive">
-                        <thead class="table-success">
+                    <h4><b><center>Daftar Bimbingan Kerja Praktik Mahasiswa</center></b></h4>
+                    <table class="table  table-bordered border-primary">
+                        <thead class="table-primary">
                             <tr align="center">
                                 <th scope="col">Pengajuan Ujian</th>
                                 <th scope="col">NIM</th>
@@ -53,11 +51,21 @@
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="row d-flex justify-content-center mt-200"> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Pengajuan Surat Keterangan</button> </div> <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Pengajuan Surat Keterangan</h5> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                          </div>
+                          <div class="modal-body">
+                            <div id="smartwizard">
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <h4><b>Daftar Status Pengajuan Ujian Mahasiswa</b></h4><br>
-                    <table class="table table-striped table-hover table-responsive">
-                        <thead class="table-success">
+                    <table class="table table-bordered border-primary">
+                        <thead class="table-primary">
                             <tr align="center">
                                 <th style="width: 10px">No</th>
                                 <th scope="col">NIM</th>

@@ -76,7 +76,7 @@
               </div>
         </div>
         <a href="{{ URL::to('/') }}/sikp/koor_bimbingan_kp" class="list-group-item list-group-item-action bg-light">Daftar Bimbingan KP</a>
-        <a href="{{ URL::to('/') }}/sikp/koor_ujian_kp" class="list-group-item list-group-item-action bg-light">Daftar Ujian KPP</a>
+        <a href="{{ URL::to('/') }}/sikp/koor_ujian_kp" class="list-group-item list-group-item-action bg-light">Daftar Ujian KP</a>
         </div>
         <!-- /#sidebar-wrapper -->
         <!-- Page Content -->

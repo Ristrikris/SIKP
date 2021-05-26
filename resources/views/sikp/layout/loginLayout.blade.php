@@ -141,9 +141,6 @@
 		</nav>
 	</header>
 
-
-
-
 	<!-- bagian konten blog -->
 		<div class="container-fluid">
 			@yield('konten')

@@ -71,8 +71,6 @@
                       <div id="smartwizard">
     <form action="/mhs/insertSuratKet" method="POST" enctype="multipart/form-data">
       {{csrf_field()}}
-<br>
-<br>
       @foreach($nim_login as $nim_mhs)
         <div class="form-group">
           <label for="exampleInputEmail1">NIM :</label> 
